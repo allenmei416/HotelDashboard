@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>e-Hotels Available Rooms</title>
+</head>
+
+<body>
+
+	<header>
+		<h1>Welcome to the views tab</h1>
+	</header>
+	<nav>
+		<script>
+			const urlParamsBack = new URLSearchParams(window.location.search);
+			const customerIDBack = urlParamsBack.get('value');
+			const link1 = "CustomerDashboard.html?value=" + customerIDBack;
+			console.log(customerIDBack);
+			console.log("WAD");
+		</script>
+
+		<li><a href="#" onclick="location.href = `${link1}`">Back</a></li>
+		
+	</nav>
+	<main>
+		<p>Select a view!</p>
+	</main>
+
+
+	<form class="form" action="views" method="post">
+		<input type="hidden" name="customerID" id="customerID">
+		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+			const customerID = urlParams.get('value');
+			console.log(customerID)
+			document.getElementById('customerID').value = customerID;
+		</script>
+		<table>
+			<p> only fill the following 2 fields if you are choosing view 2</p>
+			<tr>
+				<td>Hotel</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>Hotel Address</td>
+				<td><input type="text" name="address"></td>
+			</tr>
+
+			<label for="View">Select which view:</label>
+			<select id="choice" name="choice">
+				<option value="view1">View 1: Number of available rooms per area/city</option>
+				<option value="view2">View 2: Capacity for hotel rooms in a specific hotel</option>
+			</select>
+
+
+			<tr>
+				<td><button type="submit">Select</button></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

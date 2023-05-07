@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Page</title>
+</head>
+<body>
+	<h1>Welcome to my page</h1>
+
+<body>
+	<p id="employeeID"></p>
+	<script>
+	const urlParams = new URLSearchParams(window.location.search);
+	const employeeID = urlParams.get('value');
+	const link1 = "BookingToRenting.html?value=" + employeeID;
+	const link2 = "DirectBooking.html?value=" + employeeID;
+	const link3 = "EditEmployeeInfo.html?value=" + employeeID;
+	console.log(employeeID);
+	</script>
+	<ul>
+	<li><a href="#" onclick="location.href = `${link1}`">Change booking to renting</a></li>
+	<li><a href="#" onclick="location.href = `${link2}`">Direct Booking</a></li>
+	<li><a href="#" onclick="location.href = `${link3}`">Edit my information</a></li>
+	<li><a href="Homepage.html">Log out</a></li>
+	</ul>
+</body>
+</body>
+</html>

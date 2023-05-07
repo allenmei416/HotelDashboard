@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Dashboard</title>
+</head>
+<body>
+	<p id="customerID"></p>
+	<script>
+	const urlParams = new URLSearchParams(window.location.search);
+	const customerID = urlParams.get('value');
+	const link1 = "SelectRooms.html?value=" + customerID;
+	const link2 = "MyBookings.html?value=" + customerID;
+	const link3 = "MyRentings.html?value=" + customerID;
+	const link4 = "EditCustomerInfo.html?value=" + customerID;
+	const link5 = "Views.html?value=" + customerID;
+	console.log(customerID);
+	</script>
+	<ul>
+	<li><a href="#" onclick="location.href = `${link1}`">Look for rooms</a></li>
+	<li><a href="#" onclick="location.href = `${link2}`">My bookings</a></li>
+	<li><a href="#" onclick="location.href = `${link3}`">My rentings</a></li>
+	<li><a href="#" onclick="location.href = `${link4}`">Edit my information</a></li>
+	<li><a href="#" onclick="location.href = `${link5}`">Views</a></li>
+	<li><a href="Homepage.html">Log out</a></li>
+	</ul>
+</body>
+</html>

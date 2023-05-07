@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>e-Hotels Available Rooms</title>
+</head>
+
+<body>
+
+	<header>
+		<h1>Check out the available rooms</h1>
+	</header>
+	<nav>
+		<script>
+			const urlParamsBack = new URLSearchParams(window.location.search);
+			const customerIDBack = urlParamsBack.get('value');
+			const link1 = "CustomerDashboard.html?value=" + customerIDBack;
+			console.log(customerIDBack);
+			console.log("WAD");
+		</script>
+
+		<li><a href="#" onclick="location.href = `${link1}`">Back</a></li>
+		</ul>
+	</nav>
+	<main>
+		<p>Welcome to e-hotels!</p>
+	</main>
+
+
+	<form class="form" action="search" method="post">
+		<input type="hidden" name="customerID" id="customerID">
+		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+			const customerID = urlParams.get('value');
+			console.log(customerID)
+			document.getElementById('customerID').value = customerID;
+		</script>
+		<table>
+			<tr>
+				<td>Start Date</td>
+				<td><input type="date" name="start-date" required></td>
+			</tr>
+
+			<tr>
+				<td>End Date</td>
+				<td><input type="date" name="end-date" required></td>
+			</tr>
+
+			<tr>
+				<td>Capacity</td>
+				<td><input type="number" name="room-capacity" min="1" max="10"></td>
+			</tr>
+			
+			<tr>
+				<td>City</td>
+				<td><input type="text" name="city" ></td>
+			</tr>
+			
+			<tr>
+				<td>Hotel Chain</td>
+				<td><input type="text" name="hotel-chain" ></td>
+			</tr>
+
+			<tr>
+				<td>Hotel Category (Rating from 1-5)</td>
+				<td><input type="number" name="hotel-category" min="1" max="5"></td>
+			</tr>
+
+			<tr>
+				<td>Number of rooms</td>
+				<td><input type="number" name="num-rooms" min="1" max="10"></td>
+			</tr>
+
+			<tr>
+				<td>Room Price Lower</td>
+				<td><input type="number" value="0" name="room-price-lower"
+					min="0" max="500"></td>
+				<td>Room Price Upper</td>
+				<td><input type="number" value="0" name="room-price-upper"
+					min="0" max="500"></td>
+			</tr>
+			<tr>
+				<td><button type="submit">Search</button></td>
+				<td><button type="reset">Reset</button></td>
+			</tr>
+		</table>
+	</form>
+	
+	<br></br>
+	<br></br>
+	<h1>Book Your Rooms Below</h1>
+	
+	<form class="form" action="process-booking" method="post">
+		<input type="hidden" name="customerID2" id="customerID2">
+		<script>
+			const urlParams2 = new URLSearchParams(window.location.search);
+			const customerID2 = urlParams2.get('value');
+			console.log("hi")
+			console.log(customerID2)
+			document.getElementById('customerID2').value = customerID2;
+		</script>
+		<table>
+			<tr>
+				<td>Start Date</td>
+				<td><input type="date" name="start-date" required></td>
+			</tr>
+
+			<tr>
+				<td>End Date</td>
+				<td><input type="date" name="end-date" required></td>
+			</tr>
+
+
+			<tr>
+				<td>Room Number</td>
+				<td><input type="number" name="room-num" required></td>
+			</tr>
+
+			<tr>
+				<td><button type="submit">Book</button></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

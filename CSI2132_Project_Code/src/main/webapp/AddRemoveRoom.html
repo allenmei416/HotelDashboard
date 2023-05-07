@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>e-Hotels Available Rooms</title>
+</head>
+
+<body>
+
+	<header>
+		<h1>Add or remove room</h1>
+	</header>
+	<nav>
+		<script>
+			const urlParamsBack = new URLSearchParams(window.location.search);
+			const employeeIDBack = urlParamsBack.get('value');
+			const link1 = "AdminDashboard.html?value=" + employeeIDBack;
+			console.log(employeeIDBack);
+			console.log("WAD");
+		</script>
+
+		<li><a href="#" onclick="location.href = `${link1}`">Back</a></li>
+		</ul>
+	</nav>
+	<main>
+		<p>Welcome to e-hotels!</p>
+	</main>
+
+
+	<form class="form" action="add-remove-room" method="post">
+		<input type="hidden" name="employeeID" id="employeeID">
+		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+			const employeeID = urlParams.get('value');
+			console.log(employeeID)
+			document.getElementById('employeeID').value = employeeID;
+		</script>
+
+
+		<label for="id of hotel">ID To Remove:</label> <input type="number"
+			id="id" name="id"> <br> <br> <label
+			for="add-remove">Action:</label> <select id="add-remove"
+			name="add-remove">
+			<option value="add">Add</option>
+			<option value="remove">Remove</option>
+		</select><br>
+
+
+		<p>Fill information only if add hotel</p>
+		<label for="price">Price ($):</label> <input type="text" id="price"
+			name="price"><br> <label for="amenities">Amenities:</label>
+		<input type="text" id="amenities" name="amenities"><br> <label
+			for="capacity">Capacity:</label> <input type="number" id="capacity"
+			name="capacity"><br> <label for="view-type">View
+			Type:</label> <input type="text" id="view-type" name="view-type"><br>
+		<select id="extendable" name="extendable">
+			<option value="true">Extendable</option>
+			<option value="false">Not extendable</option>
+		</select><br> <label for="problems">Problems:</label> <input type="text"
+			id="problems" name="problems"><br>
+			<label for="hotel-id">Hotel ID:</label> <input type="number"
+			id="hotel-id" name="hotel-id"><br>
+
+		<button type="submit">Add/Remove</button>
+	</form>
+
+</body>
+</html>

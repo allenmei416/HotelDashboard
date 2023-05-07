@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Direct Renting</title>
+</head>
+
+<body>
+
+	<header>
+		<h1>Book Customers</h1>
+	</header>
+	<nav>
+		<script>
+			const urlParamsBack = new URLSearchParams(window.location.search);
+			const employeeIDBack = urlParamsBack.get('value');
+			const link1 = "EmployeeDashboard.html?value=" + employeeIDBack;
+			console.log(customerIDBack);
+			console.log("WAD");
+		</script>
+
+		<li><a href="#" onclick="location.href = `${link1}`">Back</a></li>
+		</ul>
+	</nav>
+	<main>
+		<p>Welcome to e-hotels!</p>
+	</main>
+
+
+	<form class="form" action="direct-booking" method="post">
+		<input type="hidden" name="employeeID" id="employeeID">
+		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+			const employeeID = urlParams.get('value');
+			console.log(employeeID)
+			document.getElementById('employeeID').value = employeeID;
+		</script>
+		<label for="sin">Customer SIN:</label> <input type="text" id="sin"
+			name="sin" pattern="[0-9]{9}" required><br>
+		<br> <label for="address">Address:</label> <input type="text"
+			id="address" name="address"><br>
+		<br> <label for="fname">First Name:</label> <input type="text"
+			id="fname" name="fname"><br>
+		<br> <label for="lname">Last Name:</label> <input type="text"
+			id="lname" name="lname"><br>
+		<br> <label for="customer-type">Customer Type:</label> <select
+			id="customer-type" name="customer-type">
+			<option value="returning">Returning Customer</option>
+			<option value="new">New Customer</option>
+		</select><br>
+		<br> <label for="start-date">Start Date:</label> <input
+			type="date" id="start-date" name="start-date"><br>
+		<br> <label for="end-date">End Date:</label> <input type="date"
+			id="end-date" name="end-date"><br>
+		<br> <label for="roomID">Room ID:</label> <input type="text"
+			id="roomID" name="roomID"><br>
+		<br> <label for="paid-amount">Paid Amount ($):</label> <input type="text"
+			id="paid-amount" name="paid-amount"><br>
+		<br> <input type="submit" value="Submit">
+
+	</form>
+
+
+</body>
+</html>

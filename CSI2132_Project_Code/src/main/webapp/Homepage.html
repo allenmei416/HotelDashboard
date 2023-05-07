@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>e-Hotels</title>
+</head>
+<body>
+	<header>
+		<h1>Welcome to e-Hotels</h1>
+	</header>
+	<nav>
+		<ul>
+
+		</ul>
+	</nav>
+	<main>
+		<p>DEFAULT PASSWORD IS 111111111</p>
+	</main>
+	<form class="form" action="sign-in" method="post">
+		<label for="sin">SIN:</label> <input type="text" id="SIN" name="SIN"><br>
+
+		<label for="password">Password:</label> <input type="password"
+			id="password" name="password"><br> <label for="role">I
+			am a:</label> <select id="role" name="role">
+			<option value="customer">Customer</option>
+			<option value="employee">Employee</option>
+		</select> <br> <input type="submit" value="Log In" id="loginButton">
+	</form>
+	<br>
+	<br>
+	<br>
+	<p>Customer Signup</p>
+	<form class="form" action="sign-up" method="post">
+		<label for="sin">SIN:</label> <input type="text" id="SIN" name="SIN"
+			pattern="[0-9]{9}" required><br> <label for="address">Address:</label><input
+			type="text" id="address" name="address" required> <br> <label
+			for="fname">First Name:</label> <input type="text" id="fname"
+			name="fname" required> <br> <label for="lname">Last
+			Name:</label> <input type="text" id="lname" name="lname" required><br>
+		<label for="password">Password:</label> <input type="password"
+			id="password" name="password" required> <br> <input
+			type="submit" value="Sign Up">
+	</form>
+
+</body>
+</html>

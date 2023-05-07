@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>e-Hotels Available Rooms</title>
+</head>
+
+<body>
+
+	<header>
+		<h1>Check out the available rooms</h1>
+	</header>
+	<nav>
+		<script>
+			const urlParamsBack = new URLSearchParams(window.location.search);
+			const employeeIDBack = urlParamsBack.get('value');
+			const link1 = "EmployeeDashboard.html?value=" + employeeIDBack;
+			console.log(employeeIDBack);
+			console.log("WAD");
+		</script>
+
+		<li><a href="#" onclick="location.href = `${link1}`">Back</a></li>
+		</ul>
+	</nav>
+	<main>
+		<p>Welcome to e-hotels!</p>
+	</main>
+
+
+	<form class="form" action="Book-rent" method="post">
+		<input type="hidden" name="employeeID" id="employeeID">
+		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+			const employeeID = urlParams.get('value');
+			console.log(employeeID)
+			document.getElementById('employeeID').value = employeeID;
+		</script>
+		<label for="insertBookingID">Insert Booking ID of customer:</label> <input
+			type="number" id="insertBookingID" name="insertBookingID" required>
+
+		<label for="paidAmount">Paid amount ($):</label> <input type="text"
+			id="paidAmount" name="paidAmount" required> <br> </select><br>
+		<input type="submit" value="Changing Booking to Renting">
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Page</title>
+</head>
+<body>
+	<p id="employeeID"></p>
+	<script>
+	const urlParams = new URLSearchParams(window.location.search);
+	const employeeID = urlParams.get('value');
+	const link4 = "AddRemoveEmployee.html?value=" + employeeID;
+	const link5 = "AddRemoveRoom.html?value=" + employeeID;	
+	const link6 = "AddRemoveHotel.html?value=" + employeeID;
+	
+	console.log(employeeID);
+	</script>
+	<h1>ADMIN DASHBOARD</h1>
+
+	<li><a href="Homepage.html">Log out</a></li>
+	</ul>
+	<li><a href="#" onclick="location.href = `${link4}`">Add or remove employee</a></li>
+	</ul>
+	<li><a href="#" onclick="location.href = `${link5}`">Add or remove room</a></li>
+	</ul>
+	<li><a href="#" onclick="location.href = `${link6}`">Add or remove hotel</a></li>
+	</ul>
+</body>
+</html>

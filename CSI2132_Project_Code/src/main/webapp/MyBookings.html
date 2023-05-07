@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>e-Hotels Available Rooms</title>
+</head>
+
+<body>
+
+	<header>
+		<h1>Check out your bookings</h1>
+	</header>
+	<nav>
+		<script>
+			const urlParamsBack = new URLSearchParams(window.location.search);
+			const customerIDBack = urlParamsBack.get('value');
+			const link1 = "CustomerDashboard.html?value=" + customerIDBack;
+			console.log(customerIDBack);
+			console.log("WAD");
+		</script>
+
+		<li><a href="#" onclick="location.href = `${link1}`">Back</a></li>
+	</nav>
+	<main>
+		<p>Click on the button below!</p>
+	</main>
+
+
+	<form class="form" action="my-bookings" method="post">
+		<input type="hidden" name="customerID" id="customerID">
+		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+			const customerID = urlParams.get('value');
+			console.log(customerID)
+			document.getElementById('customerID').value = customerID;
+		</script>
+		
+		<button type="submit">View</button>
+	</form>
+
+</body>
+</html>
